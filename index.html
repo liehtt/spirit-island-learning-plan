@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Digital Spirit Island — Structured Learning Plan</title>
+<title>Digital Spirit Island — Mastery Roadmap</title>
 <style>
   :root {
     /* Dawn-over-island palette — warm twilight base, bright spirit accents */
@@ -1333,6 +1333,56 @@
     box-shadow: var(--shadow-sm);
     margin-right: 4px;
   }
+  @media (max-width: 600px) {
+    .app > header,
+    .app > .hero,
+    .app > main,
+    .app > aside.rail {
+      min-width: 0 !important;
+      box-sizing: border-box;
+    }
+    header {
+      padding: 12px 14px;
+      overflow: hidden;
+    }
+    header > * {
+      min-width: 0;
+      flex-shrink: 1;
+    }
+    header > .brand {
+      width: 100%;
+      margin-right: 0;
+    }
+    .brand > div:last-child {
+      min-width: 0;
+    }
+    .hero {
+      width: 100%;
+      padding: 32px 16px 30px;
+      box-sizing: border-box;
+    }
+    .hero-banner,
+    .gate-big,
+    .first-time {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .gate-big {
+      grid-template-columns: 1fr !important;
+    }
+    .first-time {
+      display: block !important;
+      padding: 14px 16px 14px 48px;
+    }
+    .first-time .pill {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .first-time .mini-grid {
+      grid-template-columns: 1fr !important;
+      width: 100%;
+    }
+  }
 
   /* ===== LAYOUT: CSS grid — header/hero span full width,
      rail and main sit side-by-side in row 3, both centered as a frame.
@@ -1918,6 +1968,96 @@
   ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
   ::selection { background: var(--accent-soft); color: var(--fg); }
 
+  @media (max-width: 600px) {
+    html,
+    body,
+    .app {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    .app > header,
+    .app > .hero,
+    .app > main,
+    .app > aside.rail {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+    }
+    header {
+      padding: 12px 14px !important;
+      overflow: hidden;
+    }
+    header > * {
+      min-width: 0 !important;
+      flex-shrink: 1 !important;
+    }
+    header > .brand {
+      width: 100%;
+      margin-right: 0;
+    }
+    .brand > div:last-child {
+      min-width: 0;
+    }
+    .hero {
+      padding: 32px 16px 30px !important;
+    }
+    .hero-banner,
+    .gate-big,
+    .first-time {
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .gate-big {
+      grid-template-columns: 1fr !important;
+    }
+    .first-time {
+      display: block !important;
+      padding: 14px 16px 14px 48px !important;
+    }
+    .first-time .pill {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .first-time .mini-grid {
+      grid-template-columns: 1fr !important;
+      width: 100%;
+    }
+    main {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      margin: 12px 0 56px !important;
+      padding: 0 14px !important;
+      box-sizing: border-box !important;
+    }
+    main .tile,
+    main .tile.t1,
+    main .tile.t2,
+    main .tile.t3,
+    main .tile.span2,
+    main .tile.span3,
+    .tile h3,
+    .tile .body,
+    .card,
+    .diag {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .tile h3 {
+      display: block !important;
+      font-size: 1.15em !important;
+      padding: 12px 14px !important;
+      margin-top: 28px;
+    }
+    .tile h3 .num {
+      margin-right: 8px;
+    }
+  }
+
   /* ===== Print ===== */
   @media print {
     body { background: white; font-size: 11pt; }
@@ -1938,13 +2078,13 @@
     <div class="brand">
       <div class="sigil"></div>
       <div>
-        <div>Digital Spirit Island — Learning Plan</div>
-        <div class="sub">Solo-friendly · Base → Nature Incarnate · diagnostic-gated</div>
+        <div>Digital Spirit Island — Mastery Roadmap</div>
+        <div class="sub">Current DLC all enabled · Phase 4 Keeper run · diagnostic-gated</div>
       </div>
     </div>
 
     <div class="modes" role="tablist">
-      <button class="mode-btn active" data-mode="beginner">Beginner<span class="count">7 tiles</span></button>
+      <button class="mode-btn active" data-mode="beginner">Focus<span class="count">roadmap</span></button>
       <button class="mode-btn" data-mode="all">All<span class="count">22</span></button>
       <button class="mode-btn" data-mode="advanced">Advanced<span class="count">15</span></button>
     </div>
@@ -1971,7 +2111,7 @@
       <div class="gate-step">
         <span class="n">02</span>
         <div class="q">Session limit?</div>
-        <div class="a">Max 2 full games per session, 1 if you're 3-handed. Spirit Island fatigue is silent and costly.</div>
+        <div class="a">Max 2 single-spirit games or 1 two-handed game per session. Spirit Island fatigue is silent and costly.</div>
       </div>
       <div class="gate-step">
         <span class="n">03</span>
@@ -1992,34 +2132,50 @@
 
     <div class="first-time">
       <span class="pill">START HERE</span>
-      <div>This is a <b>solo-friendly, closed-loop training system</b> for Digital Spirit Island. It controls cognitive load via tiered complexity, preserves system fidelity via element/threshold awareness, and ensures measurable progress via diagnostic checkpoints. The <b>7 gold-bordered tiles below</b> cover global rules, the turn-evaluation framework, and Phases 0–2 (your first ~12 games). After that, expansion phases, two-handed solo, and Nature Incarnate's Incarna mechanic unlock. Most "how to learn Spirit Island" advice is just "play more" — this isn't.</div>
+      <div>This is a <b>solo-friendly, closed-loop training system</b> for Digital Spirit Island. It now reflects the live roadmap: Branch &amp; Claw, Jagged Earth, and Feather &amp; Flame systems are enabled together; the active run is Keeper of the Forbidden Wilds into Brandenburg-Prussia Level 2; and every progression step still requires <b>two consecutive wins</b>. The eventual ceiling is optimized <b>2-handed solo</b>, not 3-handed analysis load.</div>
+    </div>
+
+    <div class="first-time">
+      <span class="pill">NORTH STAR</span>
+      <div><b>Final objective:</b> fully experience everything Digital Spirit Island has to offer: all currently owned/enabled DLC systems, every spirit, every adversary family, scenarios, aspects, token systems, and eventually the richer synergy space of <b>2-handed solo</b>. Difficulty is a seasoning, not the meal: raise it only when a stage feels too easy or after content breadth is stable. Very high difficulty belongs at the end as an optional mastery pressure test.</div>
+    </div>
+
+    <div class="first-time">
+      <span class="pill">CURRENT RUN</span>
+      <div class="mini-grid" style="grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); margin-top:10px;">
+        <div class="drill"><div class="fac">Phase</div><div class="skill">Phase 4 — Complexity Expansion</div></div>
+        <div class="drill"><div class="fac">Spirit</div><div class="skill">Keeper of the Forbidden Wilds</div></div>
+        <div class="drill"><div class="fac">Adversary</div><div class="skill">Brandenburg-Prussia L2 · Difficulty 4</div></div>
+        <div class="drill"><div class="fac">DLC State</div><div class="skill">Events, Wilds, Strife, Disease, Badlands enabled</div></div>
+        <div class="drill"><div class="fac">Gate</div><div class="skill">2 consecutive wins before advancing</div></div>
+      </div>
     </div>
   </div>
 
   <aside class="rail" aria-label="Section navigation">
     <div class="rail-group g1"><span class="dot"></span> Essential</div>
     <a href="#s01" class="t1"><span class="n">01</span>Operating Rules</a>
-    <a href="#s02" class="t1"><span class="n">02</span>Phase 0 — Orientation</a>
-    <a href="#s03" class="t1"><span class="n">03</span>Phase 1 — Power Progression</a>
-    <a href="#s04" class="t1"><span class="n">04</span>Phase 2 — Drafting + Prussia</a>
+    <a href="#s02" class="t1"><span class="n">02</span>Completed Progress Summary</a>
+    <a href="#s03" class="t1"><span class="n">03</span>Active Phase 4 Control</a>
+    <a href="#s04" class="t1"><span class="n">04</span>Future Roadmap Pipeline</a>
     <a href="#s05" class="t1"><span class="n">05</span>Turn Evaluation Framework</a>
     <a href="#s06" class="t1"><span class="n">06</span>Anti-Pattern Control</a>
     <a href="#s07" class="t1"><span class="n">07</span>Diagnostic Gates</a>
 
     <div class="rail-group g2"><span class="dot"></span> Core</div>
     <a href="#s08" class="t2"><span class="n">08</span>Spirit Complexity Reference</a>
-    <a href="#s09" class="t2"><span class="n">09</span>Phase 3A — Branch &amp; Claw</a>
-    <a href="#s10" class="t2"><span class="n">10</span>Phase 3B — Two-Handed Solo</a>
-    <a href="#s11" class="t2"><span class="n">11</span>Phase 3C — Jagged Earth</a>
-    <a href="#s12" class="t2"><span class="n">12</span>Phase 3D — Horizons / Feather</a>
+    <a href="#s09" class="t2"><span class="n">09</span>Branch &amp; Claw Systems</a>
+    <a href="#s10" class="t2"><span class="n">10</span>Phase 5 — Two-Handed Solo</a>
+    <a href="#s11" class="t2"><span class="n">11</span>Jagged Earth Reference</a>
+    <a href="#s12" class="t2"><span class="n">12</span>Feather &amp; Flame Reference</a>
     <a href="#s13" class="t2"><span class="n">13</span>Adversary Reference</a>
     <a href="#s14" class="t2"><span class="n">14</span>Practical Tactics &amp; Growth</a>
     <a href="#s15" class="t2"><span class="n">15</span>Per-Spirit Drills</a>
     <a href="#s16" class="t2"><span class="n">16</span>Solo Play Strategy</a>
 
     <div class="rail-group g3"><span class="dot"></span> Advanced</div>
-    <a href="#s17" class="t3"><span class="n">17</span>Phase 4 — High / Very High</a>
-    <a href="#s18" class="t3"><span class="n">18</span>Phase 5 — Nature Incarnate</a>
+    <a href="#s17" class="t3"><span class="n">17</span>Phase 4 — Keeper / BP2</a>
+    <a href="#s18" class="t3"><span class="n">18</span>Future DLC Watchlist</a>
     <a href="#s19" class="t3"><span class="n">19</span>Post-Game Journaling</a>
     <a href="#s20" class="t3"><span class="n">20</span>Micro-Skills</a>
     <a href="#s21" class="t3"><span class="n">21</span>Mastery Definition</a>
@@ -2040,7 +2196,7 @@
         <div class="card do">
           <div class="hdr"><span class="badge do">Stay on tier</span></div>
           <ul>
-            <li><b>Low</b> spirits (8 available): Lightning, River, Shadows, Vital Strength, plus all 5 Horizons spirits</li>
+            <li><b>Low</b> spirits: Lightning, River, Shadows, Vital Strength, plus all 5 Horizons spirits if that DLC is included</li>
             <li><b>Moderate</b> spirits: only after 5+ clean Low-complexity wins</li>
             <li><b>High</b> spirits: only after 5+ clean Moderate wins at adversary L2+</li>
             <li><b>Very High</b>: only after 10+ High-complexity games — these spirits punish under-prepared players hard</li>
@@ -2087,7 +2243,8 @@
 
         <h4>3. Spirit Rotation Rule</h4>
         <ul>
-          <li>No spirit twice in a row at the same setup. Vary <b>spirit</b>, <b>adversary</b>, or <b>board</b>.</li>
+          <li>Training exception: when a spirit is the active phase target, repeat it until the <b>2-consecutive-win gate</b> is met. Between attempts, vary board or opening line if the loss was unclear.</li>
+          <li>Outside an active gate, no spirit twice in a row at the same setup. Vary <b>spirit</b>, <b>adversary</b>, or <b>board</b>.</li>
           <li>Maintain exposure diversity. Playing 5 River games in a row teaches River — not Spirit Island.</li>
         </ul>
 
@@ -2114,229 +2271,197 @@
       </div>
     </section>
 
-    <section class="tile t1 span2" id="s02" data-keys="phase 0 orientation tutorial quick play beginner first games invader sequence dahan blight">
+    <section class="tile t1 span2" id="s02" data-keys="completed progress summary historical phase 2 phase 3 shadows lightning thunderspeaker prussia keeper">
       <span class="tile-badge">ESSENTIAL</span>
-      <h3><span class="num">02</span><span class="priority">PHASE 0</span>Orientation — Learn the Loop (~3–5 games)</h3>
+      <h3><span class="num">02</span><span class="priority">DONE</span>Completed Progress Summary</h3>
       <div class="body">
-        <p><b>Goal:</b> internalize the Invader sequence (Explore → Build → Ravage), the Spirit phase rhythm, Dahan behavior, Blight cards, and the Fear track. Don't try to "win" yet — observe the engine running.</p>
+        <p>This page no longer treats the beginner curriculum as active work. The early phases are complete; they stay here only as a proof ledger so the live plan can focus on the current Keeper gate and the future roadmap.</p>
 
-        <h4>Setup</h4>
-        <ul>
-          <li><b>Run the in-app Tutorial</b> first — Handelabra's tutorial introduces concepts with hand-holding, then lets you finish a real game.</li>
-          <li>Then run <b>Quick Play → Beginner</b> mode 3–4 times. This is randomized: 1 Low-complexity spirit, no adversary, no Blight card variant, no scenario.</li>
-          <li><b>Use 2D Classic map view</b> initially — less visual noise than the 3D textured view.</li>
-          <li>Adversary: <b>none</b>. You're learning the base engine, not fighting yet.</li>
-        </ul>
+        <h4>Completed gates</h4>
+        <table class="reach-table">
+          <thead>
+            <tr><th>Completed stage</th><th>Setup</th><th>Proof achieved</th><th>Skill banked</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>Core loop baseline</b></td><td>Base rules, single-spirit solo</td><td>Orientation and low-complexity learning complete</td><td>Explore → Build → Ravage timing, Fast/Slow timing, Fear and Blight fundamentals</td></tr>
+            <tr><td><b>Phase 2 — Horizontal Archetypes</b></td><td>Brandenburg-Prussia L1, Difficulty 2</td><td>2 consecutive wins each with Shadows, Lightning, and Thunderspeaker</td><td>Fear/mitigation, fast-phase action economy, Dahan mobility</td></tr>
+            <tr><td><b>Phase 3 — Vertical Difficulty</b></td><td>Thunderspeaker locked into BP2 then BP3</td><td>2 consecutive wins at BP2 Difficulty 4 and BP3 Difficulty 6</td><td>BP acceleration, Stage III pressure, turn-3/turn-4 timeline discipline</td></tr>
+          </tbody>
+        </table>
 
-        <h4>The Invader Sequence — memorize this</h4>
-        <div class="invader-row">
-          <div class="inv-step explore">
-            <div class="head">Explore</div>
-            <div class="desc">Invader cards from current stage flip; Explorers spawn into matching terrains and adjacent-to-cities/towns.</div>
-            <div class="imp">Cheapest to stop. Block the spawn → no Build next turn.</div>
-          </div>
-          <div class="inv-step build">
-            <div class="head">Build</div>
-            <div class="desc">Lands containing 2+ Explorers/Towns get a Town. 2+ Towns get a City.</div>
-            <div class="imp">Removing Explorers BEFORE Build is your strongest non-damage play.</div>
-          </div>
-          <div class="inv-step ravage">
-            <div class="head">Ravage</div>
-            <div class="desc">Invaders attack: 2 damage per Explorer, 2 per Town, 3 per City. If damage ≥ land health → Blight + Dahan/Presence destroyed.</div>
-            <div class="imp">Slow powers don't prevent THIS ravage — they affect next turn's. Use Fast powers to defend now.</div>
-          </div>
-        </div>
-        <div class="tldr"><b>The pre-emption rule:</b> kill Explorers (cheap) &gt; remove Towns (mid) &gt; defend during Ravage (expensive, lossy). The earlier in the sequence you can intervene, the better the ratio.</div>
-
-        <h4>Learning targets (no scoreboard, just observation)</h4>
-        <ul>
-          <li><b>Spirit phase:</b> Growth → Energy → Cards (Plays + Fasts/Slows) → Resolve actions</li>
-          <li><b>Slow vs Fast:</b> Fast resolves before invaders that turn, Slow resolves after. Memorize this — it's the #1 newbie pitfall.</li>
-          <li><b>Element thresholds:</b> tap your spirit's Innate Powers; see what elements you generate naturally</li>
-          <li><b>Blight cards:</b> watch the cascading Blight ratio — it spreads to ONE adjacent land per Blight added, not all neighbors</li>
-          <li><b>Fear track:</b> when Terror Level rises, victory conditions get easier (eventually you only need to destroy Cities)</li>
-        </ul>
-
-        <h4>Use the digital advantages</h4>
-        <div class="card info">
-          <span class="badge info">Digital perks</span>
+        <h4>What this means</h4>
+        <div class="card do">
+          <div class="hdr"><span class="badge do">Unlocked</span></div>
           <ul>
-            <li><b>Undo liberally</b> in this phase — the digital game's main undo and Spirit-phase granular undo let you experiment with sequencing without penalty</li>
-            <li><b>Tap any token/power</b> for an in-game explanation — the rule reference is one click away</li>
-            <li><b>Watch the invader preview</b> — digital surfaces what the next 2 turns of explore/build/ravage will affect</li>
+            <li>You do not need to repeat beginner, Power Progression, or basic drafting phases unless you are using them as warm-up after a long break.</li>
+            <li>The plan can now assume you understand the Invader engine and can diagnose ordinary losses.</li>
+            <li>Difficulty 6 has already been proven with a stable spirit; the current drop to Difficulty 4 is deliberate variable isolation, not regression.</li>
           </ul>
         </div>
 
-        <div class="diag">
-          <div class="lbl">Diagnostic Checkpoint 0 — must answer without checking</div>
-          <ul>
-            <li>What is the order: Explore / Build / Ravage — and what triggers each?</li>
-            <li>What's the difference between Fast and Slow powers, and when does each resolve relative to the Invaders?</li>
-            <li>What causes Blight to cascade, and to how many lands?</li>
-            <li>What are the two loss conditions? (Blight card flips with no Blight in supply, OR all Spirits' Presence destroyed.)</li>
-            <li>What are the two win conditions? (Terror Level 3 with no Cities, then Towns, etc., OR Terror Level 4.)</li>
-          </ul>
-          <div class="fail-block"><b>Fail:</b> Re-play 1 game with the rules reference open. Re-attempt.</div>
-          <div class="pass-block"><b>Pass:</b> proceed to Phase 1.</div>
-        </div>
+        <h4>Maintenance habits</h4>
+        <ul>
+          <li><b>Before every game:</b> say the next Ravage and Build out loud before choosing Growth.</li>
+          <li><b>During drafts:</b> filter by elements first, then effect strength, then speed/reach.</li>
+          <li><b>After every game:</b> log one inflection turn, one draft decision, and one setup variable to keep or change.</li>
+        </ul>
       </div>
     </section>
 
-    <section class="tile t1 span2" id="s03" data-keys="phase 1 power progression low complexity river vital strength shadows lightning base spirits learn">
+    <section class="tile t1 span2" id="s03" data-keys="active phase 4 keeper bp2 difficulty 4 current dlc wilds sacred sites consecutive wins">
       <span class="tile-badge">ESSENTIAL</span>
-      <h3><span class="num">03</span><span class="priority">PHASE 1</span>Power Progression — One Spirit at a Time (~6–8 games)</h3>
+      <h3><span class="num">03</span><span class="priority">ACTIVE</span>Phase 4 Control Panel — Keeper / BP2</h3>
       <div class="body">
-        <p>Now you play to win, but on training wheels. Each game you use the <b>Power Progression</b> card — predetermined minor/major draws that ensure a coherent build. This removes draft pressure so you can focus on <i>using</i> your spirit.</p>
+        <p>The current live work is <b>not</b> broad exploration. It is a controlled complexity-onboarding gate: Keeper of the Forbidden Wilds, Brandenburg-Prussia L2, Difficulty 4, current DLC systems enabled, and 2 consecutive wins required before changing variables.</p>
 
-        <div class="tldr"><b>Why Power Progression:</b> drafting and learning a spirit at the same time is too much. Power Progression hands you the curated archetype the designers built. Run the rails until the spirit's logic clicks, then take the wheel.</div>
+        <h4>Locked setup</h4>
+        <table class="reach-table">
+          <thead>
+            <tr><th>Variable</th><th>Current value</th><th>Why it is locked</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Spirit</td><td><b>Keeper of the Forbidden Wilds</b></td><td>Learn Wilds, sacred-site reach, double-presence pacing, and Sun/Fire/Plant innate planning.</td></tr>
+            <tr><td>Adversary</td><td><b>Brandenburg-Prussia L2</b></td><td>Stable, predictable pressure without adding a new adversary personality.</td></tr>
+            <tr><td>Difficulty</td><td><b>4</b></td><td>Lower than completed BP3 to offset Keeper mechanics and event/token variance.</td></tr>
+            <tr><td>DLC state</td><td><b>Branch &amp; Claw + Jagged Earth + Feather &amp; Flame enabled</b></td><td>Train in the real current digital environment, not a stripped-down one.</td></tr>
+            <tr><td>Gate</td><td><b>2 consecutive wins</b></td><td>Filters out lucky Invader deck order and confirms tactical agency.</td></tr>
+          </tbody>
+        </table>
 
-        <h4>Setup (every game)</h4>
-        <ul>
-          <li><b>Single spirit, single board</b> (true solo). Pick board A or B — most balanced.</li>
-          <li>Use the <b>Power Progression</b> setup option in digital ("Use predetermined Powers" in custom game)</li>
-          <li><b>No adversary</b>, no scenario, no Blight card variant</li>
-          <li>The Difficulty rating shown should be <b>0</b></li>
-        </ul>
-
-        <h4>Recommended spirit order (do all 4 in this order)</h4>
+        <h4>Keeper success checklist</h4>
         <div class="phases">
           <div class="phase">
-            <div class="ph-name">Game 1–2</div>
-            <div class="ph-when">River Surges in Sunlight</div>
+            <div class="ph-name">Growth</div>
+            <div class="ph-when">Double-presence discipline</div>
             <ul>
-              <li>Elements: <span class="elem-chip sun">SUN</span><span class="elem-chip water">WATER</span><span class="elem-chip earth">EARTH</span><span class="elem-chip plant">PLANT</span></li>
-              <li>Learns: <b>Gather + Push</b> (movement is your damage prevention)</li>
-              <li>Easiest "engine" to feel because growth is forgiving</li>
+              <li>Prioritize double-presence growth when energy can support the next two turns.</li>
+              <li>Place toward inland sacred-site reach, not just immediate coastal problems.</li>
+              <li>Do not reclaim just because the hand is awkward; reclaim when elements or reach would otherwise fail.</li>
             </ul>
           </div>
           <div class="phase">
-            <div class="ph-name">Game 3–4</div>
-            <div class="ph-when">Vital Strength of the Earth</div>
+            <div class="ph-name">Wilds</div>
+            <div class="ph-when">Explore interception</div>
             <ul>
-              <li>Elements: <span class="elem-chip sun">SUN</span><span class="elem-chip fire">FIRE</span><span class="elem-chip earth">EARTH</span><span class="elem-chip plant">PLANT</span></li>
-              <li>Learns: <b>Defend + Major Power scaling</b></li>
-              <li>Teaches the Defend mechanic explicitly</li>
+              <li>Place Wilds before the Explore, not after the land is already a problem.</li>
+              <li>Favor inland lands that would create parallel cascades if explored.</li>
+              <li>Log the first Explore each game that Wilds prevented; that is a core proof point.</li>
             </ul>
           </div>
           <div class="phase">
-            <div class="ph-name">Game 5–6</div>
-            <div class="ph-when">Shadows Flicker Like Flame</div>
+            <div class="ph-name">Elements</div>
+            <div class="ph-when">Sun / Fire / Plant</div>
             <ul>
-              <li>Elements: <span class="elem-chip moon">MOON</span><span class="elem-chip fire">FIRE</span><span class="elem-chip air">AIR</span></li>
-              <li>Learns: <b>Fear generation</b> and cheap energy plays</li>
-              <li>The "Fear-vs-damage" decision becomes visceral here</li>
+              <li>Draft cards that keep <b>Punish for Trespassing</b> and <b>Spreading Wilds</b> online.</li>
+              <li>Prefer a slightly weaker effect with correct elements over a flashy off-element answer.</li>
+              <li>Track the turn where an innate threshold changed the outcome of a land.</li>
             </ul>
           </div>
           <div class="phase">
-            <div class="ph-name">Game 7–8</div>
-            <div class="ph-when">Lightning's Swift Strike</div>
+            <div class="ph-name">BP timing</div>
+            <div class="ph-when">Stage III pressure</div>
             <ul>
-              <li>Elements: <span class="elem-chip sun">SUN</span><span class="elem-chip air">AIR</span><span class="elem-chip fire">FIRE</span></li>
-              <li>Learns: <b>Speed conversion</b> (Slow Becomes Fast Innate)</li>
-              <li>Save for last — its Innate teaches a bad timing instinct if you start here</li>
+              <li>Remember the current deck pattern: <b>1-1-1-3-2-2-2-2-3-3-3-3</b>.</li>
+              <li>The first Stage III card appears on Turn 4; slow clearances must be planned one card ahead.</li>
+              <li>Accept low-value blight if it buys growth that prevents the Stage III spike from snowballing.</li>
             </ul>
           </div>
-        </div>
-
-        <div class="fix"><b>Common consensus order:</b> River OR Vital Strength first, Lightning last. Lightning is mechanically simple but its "Slow Becomes Fast" innate teaches you to think of Slow powers as Fast — which is a habit you'll have to un-learn for every other spirit. Start with a spirit that doesn't change phase timing.</div>
-
-        <h4>Per-game focus (do one each game)</h4>
-        <ul>
-          <li>Pick <b>one element threshold</b> on your innate panel and aim to hit it every turn</li>
-          <li>Pick <b>one land</b> as your "anchor" — predict what the Invaders will do there 2 turns out</li>
-          <li>Track <b>Energy efficiency</b>: 0–1 unspent at turn end = good; 3+ = wasted plays</li>
-        </ul>
-
-        <h4>System Debug — when something feels broken</h4>
-        <div class="card info">
-          <span class="badge info">Use the digital advantage</span>
-          When you don't understand what just happened, <b>undo</b> back to the start of that phase. Look at the invader card. Read the Build/Ravage rules. Re-play, observe what's different. Timebox: <b>5 minutes</b> per debug. Don't try to "play perfectly" — just understand the mechanic.
         </div>
 
         <div class="diag">
-          <div class="lbl">Diagnostic Checkpoint 1 — must demonstrate</div>
+          <div class="lbl">Active gate — advance only when all are true</div>
           <ul>
-            <li><b>Win at least 1 game</b> with each of the 4 Low base spirits using Power Progression (Difficulty 0)</li>
-            <li><b>Articulate</b> each spirit's win condition: how does THIS spirit generate fear or stop invaders?</li>
-            <li><b>Innate fluency:</b> name one threshold on each spirit and what activates it</li>
-            <li><b>Slow vs Fast:</b> correctly identify when to play Slow defends vs Fast defends in a same-turn dilemma</li>
-            <li><b>Element tracking:</b> hit a 2-element innate threshold deliberately, not by accident</li>
+            <li>2 consecutive wins with Keeper at Brandenburg-Prussia L2.</li>
+            <li>All current DLC systems remain enabled for both wins.</li>
+            <li>You can explain the winning growth pattern, not just the final board state.</li>
+            <li>You can name at least one Wilds placement that prevented an Explore cascade.</li>
+            <li>You can identify the key Sun/Fire/Plant threshold turn in each win.</li>
           </ul>
-          <div class="fail-block"><b>Fail:</b> repeat the spirit you struggle most with, then re-attempt.</div>
-          <div class="pass-block"><b>Pass:</b> proceed to Phase 2.</div>
+          <div class="pass-block"><b>Pass:</b> proceed to Phase 5 — 2-handed solo integration at no adversary or BP1.</div>
         </div>
       </div>
     </section>
 
-    <section class="tile t1 span2" id="s04" data-keys="phase 2 drafting brandenburg prussia adversary first power deck minor major">
+    <section class="tile t1 span2" id="s04" data-keys="future roadmap pipeline phase 5 two handed spirits adversaries scenarios all spirits dlc mastery">
       <span class="tile-badge">ESSENTIAL</span>
-      <h3><span class="num">04</span><span class="priority">PHASE 2</span>Drafting + First Adversary (~4–6 games)</h3>
+      <h3><span class="num">04</span><span class="priority">NEXT</span>Future Roadmap Pipeline</h3>
       <div class="body">
-        <p><b>Goal:</b> remove Power Progression, learn to draft your own minor/major powers, and add light Invader pressure with <b>Brandenburg-Prussia Level 1</b> — the easiest adversary because its escalation is mostly setup-only.</p>
+        <p>Use this as the default decision tree after the active Keeper gate. It keeps the same principle throughout: change one major variable at a time, require 2 consecutive wins for advancement, and favor full-content enjoyment over brute-force difficulty grinding.</p>
 
-        <h4>Setup</h4>
-        <ul>
-          <li>Single spirit (your favorite from Phase 1)</li>
-          <li><b>Drop Power Progression</b> — draft your own minors</li>
-          <li>Adversary: <b>Brandenburg-Prussia Level 1</b> (Difficulty 2)</li>
-          <li>Same board, no scenario yet</li>
-        </ul>
+        <h4>Roadmap at a glance</h4>
+        <table class="reach-table">
+          <thead>
+            <tr><th>Stage</th><th>When it unlocks</th><th>Main variable</th><th>Default setup</th><th>Advance when</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>Phase 5 — 2-handed foundations</b></td><td>After Keeper BP2 gate</td><td>Hand management and cross-spirit targeting</td><td>2 spirits, 2 boards, no adversary or BP1</td><td>2 consecutive 2-handed wins and one intentional cross-spirit play per game</td></tr>
+            <tr><td><b>Phase 6 — 2-handed pair library</b></td><td>After Phase 5 rhythm feels routine</td><td>Spirit synergy archetypes</td><td>BP1 → BP2, no scenario</td><td>One clean win with each role pair family</td></tr>
+            <tr><td><b>Phase 7 — DLC spirit breadth</b></td><td>After at least 3 comfortable pairs</td><td>Experience all owned/current spirits</td><td>Single-spirit for first contact, then 2-handed revisit</td><td>Each spirit has a journal entry, preferred build note, and one win</td></tr>
+            <tr><td><b>Phase 8 — Adversary breadth</b></td><td>After spirit breadth is underway</td><td>Adversary personality</td><td>Known spirits vs France, Habsburg Livestock, Russia, Scotland, England</td><td>You can describe each adversary's pressure without lookup</td></tr>
+            <tr><td><b>Phase 9 — Scenario and aspect tour</b></td><td>After adversary basics</td><td>Optional systems and replay variety</td><td>Low/moderate difficulty, familiar spirits</td><td>Representative scenarios and aspects sampled without derailing the main plan</td></tr>
+            <tr><td><b>Phase 10 — Completion &amp; taste cycles</b></td><td>After broad exposure</td><td>Full-content fluency, favorites, and optional difficulty</td><td>Rotating spirits/pairs across unfinished content at comfortable difficulty</td><td>Every spirit/content family is represented; difficulty rises only for challenge appetite</td></tr>
+          </tbody>
+        </table>
 
-        <h4>Drafting heuristics</h4>
+        <h4>Phase 5 — 2-handed foundations</h4>
         <div class="card do">
-          <span class="badge do">Draft cheat-sheet</span>
+          <div class="hdr"><span class="badge do">Immediate next stage</span></div>
           <ul>
-            <li><b>Take Minors that match your innate elements</b> — every match-up makes innates easier to fire</li>
-            <li><b>Reach matters:</b> if you can't deliver a Minor's effect to a useful land, the card is dead</li>
-            <li><b>Major Powers cost a card discard.</b> Don't draft a Major until you have 3+ cards in hand and a clear target</li>
-            <li><b>Speed:</b> 1 Fast :: 2 Slow is a healthy ratio. Pure Slow decks lose to early Ravages</li>
+            <li><b>Start easy:</b> no adversary for the first game, then BP1 if the first game was orderly.</li>
+            <li><b>Use mastered low-complexity spirits first:</b> Lightning + Vital Strength, River + Shadows, or Lightning + River.</li>
+            <li><b>Training target:</b> sequence two Growth choices, two hands, two boards, and shared targeting without losing the Invader timeline.</li>
+            <li><b>Do not add scenarios yet.</b> If the game feels too easy, raise adversary only after the hands feel automatic.</li>
           </ul>
         </div>
 
-        <h4>Brandenburg-Prussia L1 — what changes</h4>
-        <ul>
-          <li>Setup: extra Town in a coastal land</li>
-          <li>Most L1 effects are "ramp" — Stage III triggers earlier in the deck</li>
-          <li>The pace feels similar to no-adversary, just slightly faster</li>
-        </ul>
-        <div class="why"><b>Why Prussia first:</b> Prussia's escalation doesn't add new tokens or rules — it just spawns more invaders faster. You're still playing the base game, just on slightly-harder difficulty. Compare to England L1 which adds fortifications and changes win conditions.</div>
-
-        <h4>Structured experiments — one per game</h4>
-        <div class="ladder">
-          <div class="step">
-            <div class="lvl">Fear Run</div>
-            <div class="at">Spirit: Shadows or Lightning</div>
-            <div class="ds">Try to win on Terror, not destruction. Track when Fear cards flip; aim to push the Terror Level twice.</div>
-          </div>
-          <div class="step">
-            <div class="lvl">Damage Run</div>
-            <div class="at">Spirit: Vital Strength or Lightning</div>
-            <div class="ds">Win by destroying every City. Track Energy efficiency — how many turns did you bank a Major?</div>
-          </div>
-          <div class="step">
-            <div class="lvl">Control Run</div>
-            <div class="at">Spirit: River</div>
-            <div class="ds">Win without ever taking damage in any land. Force every invader to Explore into empty lands.</div>
-          </div>
+        <h4>Phase 6 — pair library</h4>
+        <div class="phases">
+          <div class="phase"><div class="ph-name">Tempo + defense</div><div class="ph-when">Lightning + Vital Strength</div><ul><li>Learn "Another Spirit" speed support.</li><li>Use Lightning to make key defensive or Major actions fast.</li></ul></div>
+          <div class="phase"><div class="ph-name">Control + fear</div><div class="ph-when">River + Shadows</div><ul><li>Push/gather invaders into fear or damage lines.</li><li>Practice winning by Terror rather than full board cleanup.</li></ul></div>
+          <div class="phase"><div class="ph-name">Dahan + control</div><div class="ph-when">Thunderspeaker + River</div><ul><li>Use River movement to create better Dahan battles.</li><li>Revisit the mastered Thunderspeaker engine in a synergy context.</li></ul></div>
+          <div class="phase"><div class="ph-name">Token pair</div><div class="ph-when">Keeper + Sharp Fangs</div><ul><li>Use Wilds to suppress Explores while Fangs converts Beasts into pressure.</li><li>Attempt only after first 2-handed basics are comfortable.</li></ul></div>
         </div>
 
-        <h4>Adversary progression after winning L1 twice</h4>
+        <h4>Phase 7 — all-spirit experience plan</h4>
         <ul>
-          <li>Win L1 twice in a row → bump to <b>Prussia Level 2</b></li>
-          <li>Win L2 twice → bump to <b>L3</b>, OR add a different L1 adversary (Sweden)</li>
-          <li><b>Don't grind Prussia to L6.</b> Variety teaches more than depth.</li>
+          <li><b>First contact:</b> play a new spirit true solo at Difficulty 0–2, with all current DLC systems enabled.</li>
+          <li><b>Competency pass:</b> repeat the spirit at BP1/BP2 or pair it with a familiar support spirit.</li>
+          <li><b>Journal requirement:</b> record core elements, growth preference, reclaim pressure, best pairing type, and one thing that felt fun.</li>
+          <li><b>Completion standard:</b> every spirit should eventually get a "played, understood, enjoyed/declined" entry, even if it never becomes a favorite.</li>
+          <li><b>Very High spirits:</b> Fractured Days, Starlight, and Finder should be single-spirit study sessions first, then 2-handed only when their personal loop is legible.</li>
         </ul>
+
+        <h4>Phase 8 — adversary and scenario breadth</h4>
+        <ul>
+          <li><b>France:</b> teaches town economy and loss-condition monitoring. Use control or damage spirits you already trust.</li>
+          <li><b>Habsburg Livestock:</b> teaches clean-land pressure and when prevention beats cleanup.</li>
+          <li><b>Russia:</b> teaches Explorer lethality and Beast management.</li>
+          <li><b>Scotland:</b> teaches coastal pressure and board-shape awareness.</li>
+          <li><b>England:</b> save as the density/endurance exam; do not use it to learn a new spirit.</li>
+          <li><b>Scenarios:</b> add only with familiar spirits. Treat them as content tours and puzzle variants, not as mandatory difficulty escalation.</li>
+        </ul>
+
+        <h4>Phase 10 — completion and taste cycles</h4>
+        <ul>
+          <li><b>Content completion first:</b> fill gaps in spirits, adversaries, scenarios, aspects, and DLC mechanics before chasing high difficulty.</li>
+          <li><b>Preference mapping:</b> keep a short list of favorite spirits, least-favorite spirits worth revisiting, favorite pairs, and mechanics that feel especially satisfying.</li>
+          <li><b>Difficulty as a response:</b> raise adversary level only when wins feel routine, decisions feel obvious, or the current stage no longer teaches anything.</li>
+          <li><b>Very high difficulty:</b> save Difficulty 8–10+ and extreme challenge runs for the end, when content breadth is no longer being crowded out by survival pressure.</li>
+          <li><b>Optional challenge menu:</b> high-level England/Russia, scenario + adversary combinations, weekly challenges, and self-imposed awkward pairings.</li>
+        </ul>
+
+        <h4>Default next-stage rule</h4>
+        <div class="fix"><b>If you are unsure what to do next:</b> choose the earliest incomplete stage in this table, lower adversary difficulty before adding a new spirit/hand/scenario, and require 2 consecutive wins before increasing difficulty again.</div>
 
         <div class="diag">
-          <div class="lbl">Diagnostic Checkpoint 2 — must demonstrate</div>
+          <div class="lbl">Roadmap rule of thumb</div>
           <ul>
-            <li><b>Win without Power Progression</b> as 2 of the 4 Low base spirits at Prussia L1</li>
-            <li><b>Draft justification:</b> after each draft pick, you can articulate in one sentence why you took it (element match / reach / speed)</li>
-            <li><b>Adversary awareness:</b> identify Prussia's escalation moment in the deck and plan around it</li>
-            <li><b>Fear vs damage choice:</b> read a board and choose the right victory path (don't grind to 0 Cities if you can Terror out at 3)</li>
+            <li>Never add a new spirit, new adversary, new scenario, and extra hand at the same time.</li>
+            <li>Two-handed solo is the recommended ceiling; three-handed is optional curiosity, not a progression target.</li>
+            <li>When a stage feels easy, raise adversary by one level. When it feels confusing, lower adversary before changing the spirit.</li>
+            <li>The end goal is full content fluency: every spirit experienced, every adversary family understood, scenarios/aspects sampled, DLC mechanics explored, and preferred 2-handed pairs developed.</li>
+            <li>Very high difficulty is an endgame branch or boredom valve, not the main roadmap.</li>
           </ul>
-          <div class="fail-block"><b>Fail:</b> drop back to Power Progression for 2 games, then re-attempt.</div>
-          <div class="pass-block"><b>Pass:</b> proceed to Phase 3.</div>
         </div>
       </div>
     </section>
@@ -2365,7 +2490,6 @@
               <li><b>England</b>: a land reaching 6+ buildings</li>
               <li><b>France</b>: town supply about to empty</li>
               <li><b>Sweden</b>: a Problem in a Dahan-rich land = brutal cascade</li>
-              <li><b>Habsburg Mining</b>: a land approaching 7+ invader/blight density</li>
               <li>Threats are rare (2–5 per game) but always engage them</li>
             </ul>
           </div>
@@ -2563,63 +2687,71 @@
       <span class="tile-badge">ESSENTIAL</span>
       <h3><span class="num">07</span><span class="priority">GATES</span>Diagnostic Checkpoints (Overview)</h3>
       <div class="body">
-        <p>Every phase ends with a checkpoint. You must <b>pass</b> before advancing. Passing means honestly answering the gate questions — not "I think I get it" but "I can articulate this without hesitation."</p>
+        <p>Completed gates are summarized in §02. From here forward, the checkpoints are decision rules for what to play next. Passing means the result is repeatable and explainable, not merely that one game ended in a win.</p>
 
         <div class="phases">
           <div class="phase">
-            <div class="ph-name">Checkpoint 0</div>
-            <div class="ph-when">After Phase 0</div>
+            <div class="ph-name">Completed Proof</div>
+            <div class="ph-when">Already done</div>
             <ul>
-              <li>Invader sequence</li>
-              <li>Fast vs Slow timing</li>
-              <li>Blight cascade rules</li>
-              <li>Win/loss conditions</li>
+              <li>Base loop learned</li>
+              <li>Phase 2 archetypes cleared</li>
+              <li>Phase 3 Thunderspeaker BP3 cleared</li>
             </ul>
           </div>
           <div class="phase">
-            <div class="ph-name">Checkpoint 1</div>
-            <div class="ph-when">After Phase 1</div>
+            <div class="ph-name">Active Gate</div>
+            <div class="ph-when">Phase 4 Keeper / BP2</div>
             <ul>
-              <li>Win with all 4 base Lows</li>
-              <li>Each spirit's win condition</li>
-              <li>Innate threshold fluency</li>
-              <li>Element tracking</li>
+              <li>2 consecutive Keeper wins</li>
+              <li>Wilds prevented meaningful Explores</li>
+              <li>Sun/Fire/Plant thresholds explained</li>
+              <li>All current DLC systems stayed enabled</li>
             </ul>
           </div>
           <div class="phase">
-            <div class="ph-name">Checkpoint 2</div>
-            <div class="ph-when">After Phase 2</div>
+            <div class="ph-name">Next Gate</div>
+            <div class="ph-when">Phase 5 two-handed</div>
             <ul>
-              <li>Draft justification</li>
-              <li>Adversary read</li>
-              <li>Fear vs damage path</li>
+              <li>2 consecutive 2-handed wins at Difficulty 0–2</li>
+              <li>Clear role for each spirit</li>
+              <li>At least one intentional cross-spirit interaction per game</li>
             </ul>
           </div>
           <div class="phase">
-            <div class="ph-name">Checkpoint 3</div>
-            <div class="ph-when">After each Phase 3 sub-phase</div>
+            <div class="ph-name">Breadth Gate</div>
+            <div class="ph-when">Phases 6–9</div>
             <ul>
-              <li>New token-type mastery</li>
-              <li>New spirit mechanics</li>
-              <li>Adapt drafts to new pool</li>
+              <li>Representative pair families cleared</li>
+              <li>Every current spirit gets a journal entry</li>
+              <li>Each adversary family is sampled with known spirits</li>
             </ul>
           </div>
           <div class="phase">
-            <div class="ph-name">Checkpoint 4</div>
-            <div class="ph-when">After Phase 4</div>
+            <div class="ph-name">Content Gate</div>
+            <div class="ph-when">Scenarios / Aspects</div>
             <ul>
-              <li>High-complexity spirit win</li>
-              <li>L4 adversary win</li>
-              <li>Multi-spirit synergy</li>
+              <li>Scenarios added only with familiar spirits</li>
+              <li>Aspects used to revisit mastered spirits</li>
+              <li>Difficulty lowered when adding a new rules layer</li>
             </ul>
           </div>
           <div class="phase">
-            <div class="ph-name">Checkpoint 5</div>
-            <div class="ph-when">After Phase 5</div>
+            <div class="ph-name">Mastery Cycle</div>
+            <div class="ph-when">Long-term loop</div>
             <ul>
-              <li>Incarna mechanic fluency</li>
-              <li>Habsburg Mining win</li>
-              <li>Aspect awareness</li>
+              <li>Rotate spirit pair, adversary, and scenario goals</li>
+              <li>Push difficulty only after breadth is stable</li>
+              <li>Use 2-handed solo as the main ceiling</li>
+            </ul>
+          </div>
+          <div class="phase">
+            <div class="ph-name">Future DLC Gate</div>
+            <div class="ph-when">Future DLC watchlist</div>
+            <ul>
+              <li>Only after current DLC and 2-handed basics</li>
+              <li>Single-spirit preview before 2-handed use</li>
+              <li>Separate new expansion learning from active gates</li>
             </ul>
           </div>
         </div>
@@ -2639,9 +2771,9 @@
 
     <section class="tile t2 span3" id="s08" data-keys="spirit complexity reference table low moderate high very high all spirits horizons jagged earth nature incarnate base">
       <span class="tile-badge">CORE</span>
-      <h3><span class="num">08</span>Spirit Complexity Reference (All DLCs)</h3>
+      <h3><span class="num">08</span>Spirit Complexity Reference (Current Core DLC)</h3>
       <div class="body">
-        <p>Official complexity tiers from the Spirit Island Wiki. Use this for every spirit selection decision. The default progression is left → right, top → bottom.</p>
+        <p>Official complexity tiers from the Spirit Island Wiki for the active project-context pool: base game, Branch &amp; Claw, Jagged Earth, and Feather &amp; Flame. Optional Horizons and future digital DLC are tracked separately so the current Phase 4 target stays clean.</p>
 
         <h4>LOW complexity (9 spirits) — the right place to start</h4>
         <table class="reach-table">
@@ -2661,7 +2793,7 @@
           </tbody>
         </table>
 
-        <h4>MODERATE complexity (11 spirits) — Phase 3</h4>
+        <h4>MODERATE complexity (10 spirits) — current Phase 4 pool</h4>
         <table class="reach-table">
           <thead>
             <tr><th>Spirit</th><th>Expansion</th><th>Elements (partial)</th><th>Hook</th></tr>
@@ -2677,13 +2809,10 @@
             <tr><td><b>Shifting Memory of Ages</b></td><td>Jagged Earth</td><td><span class="elem-chip sun">SUN</span><span class="elem-chip moon">MOON</span><span class="elem-chip earth">EARTH</span></td><td>Knowledge/draft hacks</td></tr>
             <tr><td><b>Stone's Unyielding Defiance</b></td><td>Jagged Earth</td><td><span class="elem-chip earth">EARTH</span></td><td>Defend specialist</td></tr>
             <tr><td><b>Volcano Looming High</b></td><td>Jagged Earth</td><td><span class="elem-chip sun">SUN</span><span class="elem-chip fire">FIRE</span><span class="elem-chip earth">EARTH</span></td><td>Big-bang damage</td></tr>
-            <tr><td><b>Ember-Eyed Behemoth</b></td><td>Nature Incarnate</td><td><span class="elem-chip fire">FIRE</span><span class="elem-chip earth">EARTH</span><span class="elem-chip animal">ANIMAL</span></td><td>Incarna mechanic — first to learn</td></tr>
-            <tr><td><b>Hearth-Vigil</b></td><td>Nature Incarnate</td><td><span class="elem-chip sun">SUN</span><span class="elem-chip fire">FIRE</span><span class="elem-chip earth">EARTH</span></td><td>Defender; Vitality tokens</td></tr>
-            <tr><td><b>Towering Roots of the Jungle</b></td><td>Nature Incarnate</td><td><span class="elem-chip sun">SUN</span><span class="elem-chip earth">EARTH</span><span class="elem-chip plant">PLANT</span></td><td>Incarna + Jungle control</td></tr>
           </tbody>
         </table>
 
-        <h4>HIGH complexity (10 spirits) — Phase 4</h4>
+        <h4>HIGH complexity (7 spirits) — after Keeper gate</h4>
         <table class="reach-table">
           <thead>
             <tr><th>Spirit</th><th>Expansion</th><th>Elements (partial)</th><th>Warning</th></tr>
@@ -2691,19 +2820,15 @@
           <tbody>
             <tr><td><b>Bringer of Dreams and Nightmares</b></td><td>Base</td><td><span class="elem-chip moon">MOON</span><span class="elem-chip air">AIR</span><span class="elem-chip animal">ANIMAL</span></td><td>Fear-only win path; counterintuitive</td></tr>
             <tr><td><b>Ocean's Hungry Grasp</b></td><td>Base</td><td><span class="elem-chip sun">SUN</span><span class="elem-chip moon">MOON</span><span class="elem-chip water">WATER</span></td><td>Coast-only; needs careful drafting</td></tr>
-            <tr><td><b>Heart of the Wildfire</b></td><td>Promo 1</td><td><span class="elem-chip sun">SUN</span><span class="elem-chip fire">FIRE</span><span class="elem-chip air">AIR</span></td><td>Self-blights to spread — risky</td></tr>
-            <tr><td><b>Serpent Slumbering Beneath the Island</b></td><td>Promo 1</td><td><span class="elem-chip moon">MOON</span><span class="elem-chip fire">FIRE</span><span class="elem-chip water">WATER</span><span class="elem-chip earth">EARTH</span></td><td>Slow ramp; bad in true solo</td></tr>
-            <tr><td><b>Downpour Drenches the World</b></td><td>Feather</td><td><span class="elem-chip air">AIR</span><span class="elem-chip water">WATER</span><span class="elem-chip plant">PLANT</span></td><td>Wet tokens; positional</td></tr>
+            <tr><td><b>Heart of the Wildfire</b></td><td>Feather &amp; Flame</td><td><span class="elem-chip sun">SUN</span><span class="elem-chip fire">FIRE</span><span class="elem-chip air">AIR</span></td><td>Self-blights to spread — risky</td></tr>
+            <tr><td><b>Serpent Slumbering Beneath the Island</b></td><td>Feather &amp; Flame</td><td><span class="elem-chip moon">MOON</span><span class="elem-chip fire">FIRE</span><span class="elem-chip water">WATER</span><span class="elem-chip earth">EARTH</span></td><td>Slow ramp; bad in true solo</td></tr>
+            <tr><td><b>Downpour Drenches the World</b></td><td>Feather &amp; Flame</td><td><span class="elem-chip air">AIR</span><span class="elem-chip water">WATER</span><span class="elem-chip plant">PLANT</span></td><td>Wet tokens; positional</td></tr>
             <tr><td><b>Shroud of Silent Mist</b></td><td>Jagged Earth</td><td><span class="elem-chip moon">MOON</span><span class="elem-chip air">AIR</span><span class="elem-chip water">WATER</span></td><td>Death-fog flavor; passive damage</td></tr>
             <tr><td><b>Vengeance as a Burning Plague</b></td><td>Jagged Earth</td><td><span class="elem-chip fire">FIRE</span><span class="elem-chip plant">PLANT</span><span class="elem-chip animal">ANIMAL</span></td><td>Disease tokens; long ramp</td></tr>
-            <tr><td><b>Breath of Darkness Down Your Spine</b></td><td>Nature Incarnate</td><td><span class="elem-chip moon">MOON</span><span class="elem-chip air">AIR</span></td><td>Incarna; Endless Dark tile</td></tr>
-            <tr><td><b>Relentless Gaze of the Sun</b></td><td>Nature Incarnate</td><td><span class="elem-chip sun">SUN</span><span class="elem-chip fire">FIRE</span><span class="elem-chip air">AIR</span></td><td>Heat &amp; visibility</td></tr>
-            <tr><td><b>Wandering Voice Keens Delirium</b></td><td>Nature Incarnate</td><td><span class="elem-chip moon">MOON</span><span class="elem-chip air">AIR</span><span class="elem-chip animal">ANIMAL</span></td><td>Incarna + strife loops</td></tr>
-            <tr><td><b>Wounded Waters Bleeding</b></td><td>Nature Incarnate</td><td><span class="elem-chip moon">MOON</span><span class="elem-chip water">WATER</span><span class="elem-chip plant">PLANT</span></td><td>Healing cards; recovery</td></tr>
           </tbody>
         </table>
 
-        <h4>VERY HIGH complexity (4 spirits) — Phase 5+, after ~30 games</h4>
+        <h4>VERY HIGH complexity (3 spirits) — late single-spirit study</h4>
         <table class="reach-table">
           <thead>
             <tr><th>Spirit</th><th>Expansion</th><th>Elements (partial)</th><th>Why hard</th></tr>
@@ -2711,8 +2836,7 @@
           <tbody>
             <tr><td><b>Fractured Days Split the Sky</b></td><td>Jagged Earth</td><td><span class="elem-chip moon">MOON</span><span class="elem-chip air">AIR</span></td><td>Time manipulation; rewinds turns</td></tr>
             <tr><td><b>Starlight Seeks Its Form</b></td><td>Jagged Earth</td><td>Varies</td><td>Chooses 2 elements per game; ramps slowly</td></tr>
-            <tr><td><b>Finder of Paths Unseen</b></td><td>JE / Feather</td><td><span class="elem-chip moon">MOON</span><span class="elem-chip air">AIR</span><span class="elem-chip water">WATER</span></td><td>Hidden info; mid-game pivots</td></tr>
-            <tr><td><b>Dances Up Earthquakes</b></td><td>Nature Incarnate</td><td><span class="elem-chip sun">SUN</span><span class="elem-chip fire">FIRE</span><span class="elem-chip earth">EARTH</span></td><td>Quake tokens; volatile</td></tr>
+            <tr><td><b>Finder of Paths Unseen</b></td><td>Feather &amp; Flame</td><td><span class="elem-chip moon">MOON</span><span class="elem-chip air">AIR</span><span class="elem-chip water">WATER</span></td><td>Hidden info; mid-game pivots</td></tr>
           </tbody>
         </table>
 
@@ -2720,11 +2844,11 @@
       </div>
     </section>
 
-    <section class="tile t2 span2" id="s09" data-keys="phase 3a branch claw events tokens strife wilds beasts disease sweden france keeper sharp fangs">
+    <section class="tile t2 span2" id="s09" data-keys="branch claw systems events tokens strife wilds beasts disease sweden france keeper sharp fangs">
       <span class="tile-badge">CORE</span>
-      <h3><span class="num">09</span>Phase 3A — Branch &amp; Claw (~5–7 games)</h3>
+      <h3><span class="num">09</span>Branch &amp; Claw Systems Baseline</h3>
       <div class="body">
-        <p>Branch &amp; Claw is the smallest expansion but adds the most learning-shaping mechanics. Add it FIRST.</p>
+        <p>Branch &amp; Claw is no longer a future onboarding step in this roadmap; its systems are live. Keep Events and the four tokens enabled while learning Keeper so the reps match the full digital rules environment.</p>
 
         <h4>What B&amp;C adds</h4>
         <div class="card do">
@@ -2753,7 +2877,7 @@
             <div class="ph-name">Step 2</div>
             <div class="ph-when">2 games · Sharp Fangs</div>
             <ul>
-              <li>Play Sharp Fangs with Power Progression</li>
+              <li>Play Sharp Fangs at Difficulty 0–2 without adding a new adversary</li>
               <li>Learn Beasts as damage delivery</li>
               <li>Same adversary level</li>
             </ul>
@@ -2763,7 +2887,7 @@
             <div class="ph-when">2 games · Keeper</div>
             <ul>
               <li>Keeper of the Forbidden Wilds, drafted</li>
-              <li>Learn Wilds tokens as defense + growth</li>
+              <li>Learn Wilds tokens as Explore denial and sacred-site tempo</li>
               <li>Bump adversary to L2</li>
             </ul>
           </div>
@@ -2784,10 +2908,10 @@
             <tr><th>Token</th><th>Effect</th><th>Source</th></tr>
           </thead>
           <tbody>
-            <tr><td><span class="elem-chip animal">STRIFE</span></td><td>Invader in land with strife: their next attack deals 1 less damage (and may not Build). Stackable.</td><td>Grinning Trickster, Wandering Voice, Events, some powers</td></tr>
-            <tr><td><span class="elem-chip plant">WILDS</span></td><td>Boost spirits in that land: +1 damage from your powers, makes powers cheaper or extra effects.</td><td>Keeper, some events</td></tr>
-            <tr><td><span class="elem-chip animal">BEASTS</span></td><td>Behave like minor units, attacks invaders, gives Dahan/spirit aid.</td><td>Sharp Fangs, Many Minds, Lure, events</td></tr>
-            <tr><td><span class="elem-chip moon">DISEASE</span></td><td>Builds stall: invader skips Build in land with Disease. Spreads.</td><td>Vengeance, some powers</td></tr>
+            <tr><td><span class="elem-chip animal">STRIFE</span></td><td>Placed on an Invader; the next time that Invader deals damage, remove 1 Strife to reduce its damage by 1.</td><td>Grinning Trickster, Wandering Voice, Events, some powers</td></tr>
+            <tr><td><span class="elem-chip plant">WILDS</span></td><td>Prevents the next Explore in that land, then is removed. For Keeper, inland Wilds are tempo, not decoration.</td><td>Keeper, some events</td></tr>
+            <tr><td><span class="elem-chip animal">BEASTS</span></td><td>No default action by themselves; Events, Fear, Powers, and Beasts spirits turn them into pressure or defense.</td><td>Sharp Fangs, Many Minds, Lure, events</td></tr>
+            <tr><td><span class="elem-chip moon">DISEASE</span></td><td>Prevents the next Build in that land, then is removed. Use it to buy a turn, not to solve the land forever.</td><td>Vengeance, some powers</td></tr>
           </tbody>
         </table>
 
@@ -2799,10 +2923,12 @@
         </ul>
 
         <div class="diag">
-          <div class="lbl">Diagnostic Checkpoint 3A (Branch &amp; Claw)</div>
+          <div class="lbl">Branch &amp; Claw Baseline Check</div>
           <ul>
-            <li>Win once each with Sharp Fangs and Keeper at Prussia or Sweden L1+</li>
-            <li>Identify which token interacts with your spirit's innates (e.g., Wilds → Keeper's bonuses, Beasts → Sharp Fangs damage)</li>
+            <li><b>Completed historically:</b> Branch &amp; Claw systems are active in the current-DLC ruleset</li>
+            <li><b>Current live use:</b> win twice consecutively with Keeper at Brandenburg-Prussia L2</li>
+            <li>Win once each with Sharp Fangs and Keeper at Prussia or Sweden L1+ when rotating back for breadth</li>
+            <li>Identify which token interacts with your spirit's plan (e.g., Wilds → Keeper's Explore denial, Beasts → Sharp Fangs damage)</li>
             <li>Read an Event card and predict its board impact before playing it</li>
             <li>Beat France L1 (optional but recommended)</li>
           </ul>
@@ -2810,19 +2936,19 @@
       </div>
     </section>
 
-    <section class="tile t2 span2" id="s10" data-keys="phase 3b two handed solo multi spirit synergy pairs combinations">
+    <section class="tile t2 span2" id="s10" data-keys="phase 5 two handed solo multi spirit synergy pairs combinations">
       <span class="tile-badge">CORE</span>
-      <h3><span class="num">10</span>Phase 3B — Two-Handed Solo (~4–6 games)</h3>
+      <h3><span class="num">10</span>Phase 5 — Two-Handed Solo Integration</h3>
       <div class="body">
-        <p>Going from 1 spirit to 2 spirits doubles the strategic surface area. Most experienced solo players consider 2-handed the <b>balanced default</b> — game state is less swingy than true solo, and you learn spirit synergy.</p>
+        <p>Two-handed solo is now the planned ceiling after Phase 4, not an early detour. Going from 1 spirit to 2 spirits doubles the strategic surface area, creates the cross-spirit interactions that true solo cannot show, and stays below the tracking burden of 3-handed solo.</p>
 
-        <div class="tldr"><b>Don't skip this.</b> Many of the game's most beautiful interactions only happen across spirits — Lightning's "Slow Becomes Fast" on a teammate's Slow Major, Bringer's fear engine fed by a partner's damage, etc.</div>
+        <div class="tldr"><b>Do this after Keeper's Phase 4 gate.</b> Many of the game's most beautiful interactions only happen across spirits — Lightning's "Slow Becomes Fast" on a teammate's Slow Major, Bringer's fear engine fed by a partner's damage, and "Another Spirit" targeting that finally has a real partner.</div>
 
         <h4>Setup</h4>
         <ul>
           <li><b>2 spirits, 2 boards</b>, adjacent boards (B+C or D+E)</li>
           <li>You control both spirits each turn</li>
-          <li>Same adversary level you can reliably beat solo, dropped 1 level (e.g., if you beat Prussia L3 solo, try Prussia L2 two-handed first)</li>
+          <li>Start at <b>no adversary or Brandenburg-Prussia L1</b> even though the solo cap is higher; the variable being trained is dual-hand management, not raw difficulty</li>
           <li>No scenario yet</li>
         </ul>
 
@@ -2858,8 +2984,8 @@
             <div class="fac">Sharp Fangs + Keeper</div>
             <div class="skill">Beasts × Wilds</div>
             <ul>
-              <li>Keeper's Wilds boost Sharp Fangs' Beast damage</li>
-              <li>Both Branch &amp; Claw spirits — practice their tokens together</li>
+              <li>Keeper's Wilds suppress Explores while Sharp Fangs turns Beasts into damage</li>
+              <li>Both Branch &amp; Claw spirits — practice token timing without adding a new adversary</li>
             </ul>
           </div>
         </div>
@@ -2877,28 +3003,29 @@
         <h4>Roles taxonomy</h4>
         <ul>
           <li><b>Damage:</b> Lightning, Shadows, Volcano, Heart of the Wildfire, Vengeance</li>
-          <li><b>Defend:</b> Vital Strength, Stone, Hearth-Vigil, Shroud</li>
+          <li><b>Defend:</b> Vital Strength, Stone, Shroud</li>
           <li><b>Control:</b> River, Rampant Green, Fathomless Mud, Lure</li>
-          <li><b>Fear:</b> Bringer, Shadows, Wandering Voice, Wounded Waters</li>
+          <li><b>Fear:</b> Bringer, Shadows</li>
           <li><b>Support/Major engine:</b> Shifting Memory, Starlight, Finder</li>
         </ul>
         <p><b>Healthy pair:</b> at least one Damage or Fear spirit + one Defend or Control spirit. Avoid 2 pure Damage or 2 pure Defend.</p>
 
         <div class="diag">
-          <div class="lbl">Diagnostic Checkpoint 3B</div>
+          <div class="lbl">Diagnostic Checkpoint 5 — Two-Handed Solo</div>
           <ul>
-            <li>Win at least 2 two-handed games at Difficulty 2+</li>
+            <li>Win 2 consecutive two-handed games at Difficulty 0–2</li>
             <li>Articulate the role of each spirit in your pair</li>
             <li>Use a cross-spirit interaction at least once (e.g., partner's Push moves invaders into your damage land)</li>
             <li>Plan turn order before resolving (decide which spirit grows first based on energy needs)</li>
+            <li>Only raise adversary level after the dual-hand rhythm feels routine</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="tile t2 span2" id="s11" data-keys="phase 3c jagged earth badlands isolate aspects habsburg russia trickster lure many minds shifting memory stone volcano">
+    <section class="tile t2 span2" id="s11" data-keys="jagged earth reference badlands isolate aspects habsburg russia trickster lure many minds shifting memory stone volcano">
       <span class="tile-badge">CORE</span>
-      <h3><span class="num">11</span>Phase 3C — Jagged Earth (~8–10 games)</h3>
+      <h3><span class="num">11</span>Jagged Earth Systems Reference</h3>
       <div class="body">
         <p>The biggest expansion. Adds 10 spirits, 2 adversaries, 6 Aspects (mini-reskins of base spirits), and 2 new mechanics. Split this phase carefully.</p>
 
@@ -2956,7 +3083,7 @@
             <div class="ph-when">2 games · One Moderate JE</div>
             <ul>
               <li>Pick ONE: Stone (defender), Volcano (damage), Many Minds (animal control)</li>
-              <li>Solo, Power Progression, no JE adversary</li>
+              <li>Solo, no new JE adversary</li>
               <li>Just learn one spirit at a time</li>
             </ul>
           </div>
@@ -2995,7 +3122,7 @@
           <ul>
             <li><b>Don't ignore Aspects.</b> Many players never try them, missing 6 free spirit variations.</li>
             <li><b>Don't skip Stone.</b> Stone is the cleanest Defender in the game — it teaches the Defend rule precisely.</li>
-            <li><b>Don't try Fractured Days or Starlight first.</b> They're Very High for a reason. Save for Phase 5.</li>
+            <li><b>Don't try Fractured Days or Starlight first.</b> They're Very High for a reason. Save for late single-spirit study.</li>
             <li><b>Don't pile Badlands without an Innate that uses them.</b> They're +1 damage only if you have a damage source.</li>
           </ul>
         </div>
@@ -3012,16 +3139,16 @@
       </div>
     </section>
 
-    <section class="tile t2 span2" id="s12" data-keys="phase 3d horizons feather flame scotland promo finder downpour aspects">
+    <section class="tile t2 span2" id="s12" data-keys="horizons feather flame scotland promo finder downpour aspects">
       <span class="tile-badge">CORE</span>
-      <h3><span class="num">12</span>Phase 3D — Horizons &amp; Feather (~4–6 games)</h3>
+      <h3><span class="num">12</span>Feather &amp; Flame Reference</h3>
       <div class="body">
         <p>Two smaller content packs that fit naturally between Branch &amp; Claw and Jagged Earth. If you don't own them, skip this section.</p>
 
         <h4>Horizons of Spirit Island</h4>
         <div class="card info">
           <span class="badge info">Standalone-compatible</span>
-          5 additional <b>Low-complexity</b> spirits + 2 new boards (G &amp; H). Designed as a gentler on-ramp than the base game's 4 Lows. If you got Horizons cheaply, do these BEFORE Phase 3A.
+          5 additional <b>Low-complexity</b> spirits + 2 new boards (G &amp; H). Designed as a gentler on-ramp than the base game's 4 Lows. Treat Horizons as optional breadth outside the current project-context DLC scope.
         </div>
         <ul>
           <li><b>Devouring Teeth Lurk Underfoot</b> — site denial, Animal-themed</li>
@@ -3037,7 +3164,7 @@
             <div class="when">Spirits</div>
             <div class="name">Finder of Paths Unseen (Very High)</div>
             <ul>
-              <li>Hidden info, mid-game pivots — Phase 5 material</li>
+              <li>Hidden info, mid-game pivots — late single-spirit study</li>
             </ul>
           </div>
           <div class="dlc">
@@ -3074,7 +3201,7 @@
             <div class="name">Heart of the Wildfire (High)</div>
             <ul>
               <li>Self-blights to spread — risky, advanced</li>
-              <li>Phase 4 material</li>
+              <li>Later breadth material</li>
             </ul>
           </div>
           <div class="dlc">
@@ -3083,7 +3210,7 @@
             <ul>
               <li>Slow ramp, big mid-game spike</li>
               <li>Bad in true solo; great 2-handed</li>
-              <li>Phase 4 material</li>
+              <li>Later breadth material</li>
             </ul>
           </div>
         </div>
@@ -3101,7 +3228,7 @@
 
     <section class="tile t2 span3" id="s13" data-keys="adversary reference difficulty levels prussia england sweden france habsburg russia scotland mining">
       <span class="tile-badge">CORE</span>
-      <h3><span class="num">13</span>Adversary Reference (All DLCs)</h3>
+      <h3><span class="num">13</span>Adversary Reference (Current DLC Scope)</h3>
       <div class="body">
         <p>Adversaries are the difficulty knob. Each has 7 levels (Base + 1–6) with cumulative effects. Use this table for setup decisions.</p>
 
@@ -3129,7 +3256,6 @@
             <tr><td><b>Habsburg Livestock</b></td><td>Jagged Earth</td><td class="lvl-col">2</td><td class="lvl-col">3</td><td class="lvl-col">5</td><td class="lvl-col">6</td><td class="lvl-col">8</td><td class="lvl-col">9</td><td class="lvl-col">10</td><td>Towns in clean lands; irreparable damage</td></tr>
             <tr><td><b>Russia (Tsardom)</b></td><td>Jagged Earth</td><td class="lvl-col">—</td><td class="lvl-col">3</td><td class="lvl-col">4</td><td class="lvl-col">6</td><td class="lvl-col">7</td><td class="lvl-col">9</td><td class="lvl-col">11</td><td>Beasts loss; Explorers +1 damage</td></tr>
             <tr><td><b>Scotland</b></td><td>Feather</td><td class="lvl-col">—</td><td class="lvl-col">1</td><td class="lvl-col">4</td><td class="lvl-col">6</td><td class="lvl-col">7</td><td class="lvl-col">8</td><td class="lvl-col">10</td><td>Coastal trade; sea blight</td></tr>
-            <tr><td><b>Habsburg Mining</b></td><td>Nature Incarnate</td><td class="lvl-col">1</td><td class="lvl-col">3</td><td class="lvl-col">4</td><td class="lvl-col">5</td><td class="lvl-col">7</td><td class="lvl-col">9</td><td class="lvl-col">10</td><td>Tunnels — "Land Stripped Bare" loss</td></tr>
           </tbody>
         </table>
 
@@ -3139,17 +3265,16 @@
             <tr><th>Your phase</th><th>Adversaries to use</th><th>Difficulty range</th></tr>
           </thead>
           <tbody>
-            <tr><td>Phase 0–1</td><td>None</td><td class="lvl-col">0</td></tr>
-            <tr><td>Phase 2</td><td>Prussia L1 → L2</td><td class="lvl-col">2 → 4</td></tr>
-            <tr><td>Phase 3A</td><td>Add Sweden L1–2, try France L1</td><td class="lvl-col">2 → 5</td></tr>
-            <tr><td>Phase 3B (two-hand)</td><td>Drop 1 level from your solo cap</td><td class="lvl-col">2 → 4</td></tr>
-            <tr><td>Phase 3C (JE)</td><td>Add Habsburg Livestock, Russia L1–L2</td><td class="lvl-col">3 → 6</td></tr>
-            <tr><td>Phase 4</td><td>England L1 → L3, France L2 → L4</td><td class="lvl-col">3 → 7</td></tr>
-            <tr><td>Phase 5</td><td>Habsburg Mining + scenarios, England L4+</td><td class="lvl-col">7 → 10+</td></tr>
+            <tr><td>Completed foundation</td><td>Base loop, low spirits, Brandenburg-Prussia L1</td><td class="lvl-col">0 → 2</td></tr>
+            <tr><td>Phase 2 (completed)</td><td>Shadows, Lightning, Thunderspeaker at Brandenburg-Prussia L1</td><td class="lvl-col">2</td></tr>
+            <tr><td>Phase 3 (completed)</td><td>Thunderspeaker locked; Brandenburg-Prussia L2 → L3</td><td class="lvl-col">4 → 6</td></tr>
+            <tr><td>Phase 4 (current)</td><td>Keeper vs Brandenburg-Prussia L2, all current DLC systems enabled</td><td class="lvl-col">4</td></tr>
+            <tr><td>Phase 5 (two-hand)</td><td>No adversary or Brandenburg-Prussia L1 while learning dual-hand rhythm</td><td class="lvl-col">0 → 2</td></tr>
+            <tr><td>Later breadth</td><td>France, Habsburg Livestock, Russia, Scotland, England, scenarios</td><td class="lvl-col">3 → 10+</td></tr>
           </tbody>
         </table>
 
-        <div class="why"><b>England is "the final boss."</b> Even Base England (Difficulty 3) is harder than L1 of most others. Save it for Phase 4. Russia L6 and England L6 are the two hardest 1-adversary configs in the game.</div>
+        <div class="why"><b>England is "the final boss."</b> Even Base England (Difficulty 3) is harder than L1 of most others. Save it for later breadth with a familiar spirit. Russia L6 and England L6 are the two hardest 1-adversary configs in the game.</div>
 
         <h4>Adversary "personality" — what each teaches</h4>
         <ul>
@@ -3160,7 +3285,6 @@
           <li><b>Habsburg Livestock</b> — clean-land vigilance: don't let "empty" lands stay empty</li>
           <li><b>Russia</b> — Explorer threat: kill Explorers FAST</li>
           <li><b>Scotland</b> — coastal play: ports/sea blight</li>
-          <li><b>Habsburg Mining</b> — concentration: lands with mining tunnels accumulate Invader + Blight density</li>
         </ul>
       </div>
     </section>
@@ -3344,7 +3468,7 @@
             <div class="fac">A Spread of Rampant Green</div>
             <div class="skill">Drill: Build denial</div>
             <ul>
-              <li>Prevent 3+ Builds in one game using Plant tokens / pushes</li>
+              <li>Prevent 3+ Builds in one game using Presence, Powers, and pushes</li>
               <li>Never let an invader Explore into your starting land</li>
               <li>Mastery: Solo win England L2</li>
             </ul>
@@ -3353,9 +3477,9 @@
             <div class="fac">Keeper of the Forbidden Wilds</div>
             <div class="skill">Drill: Wilds engine</div>
             <ul>
-              <li>Maintain 5+ Wilds tokens on the board through end of game</li>
-              <li>Use Wilds boost on a Major Power for &gt; 10 damage</li>
-              <li>Mastery: Solo win Habsburg L2</li>
+              <li>Prevent 3+ Explores in one game using Wilds</li>
+              <li>Place at least one inland Wilds before an Explore would cascade</li>
+              <li>Current mastery gate: 2 consecutive solo wins vs Brandenburg-Prussia L2</li>
             </ul>
           </div>
           <div class="drill cx-mod">
@@ -3402,11 +3526,13 @@
 
         <h4>Per-spirit proficiency gating</h4>
         <div class="card do">
-          Before advancing past Phase 2, you should have:
+          For the future all-spirit tour, each spirit should eventually have:
           <ul>
-            <li>At least <b>1 clean win</b> with each of the 4 Low base spirits at Prussia L1+</li>
-            <li>At least <b>1 game per spirit</b> where you can articulate the spirit's win path in one sentence</li>
-            <li>A favorite (the spirit you most enjoy) AND a least-favorite — both noted in your journal (§19)</li>
+            <li>At least <b>1 clean win</b> in true solo or a clearly assigned 2-handed role</li>
+            <li>A one-sentence win path: how this spirit actually wins, not just what its cards do</li>
+            <li>A growth note: top-track bias, bottom-track bias, reclaim pressure, or energy bottleneck</li>
+            <li>A pairing note: support wanted, support offered, and whether it prefers true solo or 2-handed</li>
+            <li>A personal enjoyment rating so the roadmap preserves fun, not just completion</li>
           </ul>
         </div>
       </div>
@@ -3458,8 +3584,8 @@
 
         <h4>Three+ Handed Solo</h4>
         <div class="card cond">
-          <span class="badge cond">Advanced</span>
-          Possible but mentally exhausting. Most players cap at 2-handed unless using the digital game's preview/undo to manage cognitive load. The digital advantage is real here — automated bookkeeping makes 3+ spirits viable, where physical play would be near-impossible to track.
+          <span class="badge cond">Not recommended</span>
+          Treat 3-handed solo as a curiosity, not a roadmap target. Digital bookkeeping makes it possible, but the analysis load climbs hard enough that it stops serving the main objective: enjoying and mastering the whole content set through clean tactical decisions.
         </div>
 
         <h4>Solo-specific tactics</h4>
@@ -3481,65 +3607,84 @@
         </ul>
 
         <h4>When solo plateaus</h4>
-        <div class="why"><b>If you're winning Difficulty 6+ consistently solo:</b> try the Daily/Weekly Challenge, online multiplayer (cross-platform), or pivot to 3-handed for a fresh cognitive load. The biggest skill ceiling in solo is "you've memorized which Minors to draft" — multiplayer breaks this by giving you novel draft pools.</div>
+        <div class="why"><b>If you're winning Difficulty 6+ consistently solo:</b> move into structured 2-handed pairings, try the Daily/Weekly Challenge, or play online multiplayer. The biggest skill ceiling in true solo is "you've memorized which Minors to draft" — partner spirits and multiplayer break this by giving you novel draft pools and cross-spirit timing puzzles.</div>
       </div>
     </section>
 
     <!-- ===================== TIER 3 — ADVANCED ===================== -->
 
-    <section class="tile t3 span2" id="s17" data-keys="phase 4 high complexity bringer ocean wildfire serpent england france russia scenarios">
+    <section class="tile t3 span2" id="s17" data-keys="phase 4 current keeper forbidden wilds brandenburg prussia bp2 all dlc events tokens">
       <span class="tile-badge">ADVANCED</span>
-      <h3><span class="num">17</span>Phase 4 — High Complexity &amp; Hard Adversaries (~10–15 games)</h3>
+      <h3><span class="num">17</span>Phase 4 — Complexity Expansion (Current)</h3>
       <div class="body">
-        <p>The transition from "I'm comfortable" to "I'm competent." High-complexity spirits have higher Energy curves, more board state to track, and reward strategic depth over reactive play.</p>
+        <p>The active objective is to onboard DLC/high-complexity decision load under a stable adversary. Difficulty is intentionally backed down from the completed Thunderspeaker BP3 work so the learning variable is <b>Keeper + current enabled DLC systems</b>, not raw Invader pressure.</p>
 
-        <h4>Setup philosophy</h4>
-        <ul>
-          <li>Single spirit OR two-handed, whichever you prefer</li>
-          <li>Adversary L3–L5 range</li>
-          <li>Start considering <b>Scenarios</b> for variety</li>
-        </ul>
+        <h4>Current setup lock</h4>
+        <div class="card do">
+          <div class="hdr"><span class="badge do">Active run</span></div>
+          <ul>
+            <li><b>Spirit:</b> Keeper of the Forbidden Wilds</li>
+            <li><b>Adversary:</b> Brandenburg-Prussia Level 2, Difficulty 4</li>
+            <li><b>DLC:</b> Branch &amp; Claw, Jagged Earth, and Feather &amp; Flame systems enabled</li>
+            <li><b>Tokens/events:</b> Events, Wilds, Strife, Disease, and Badlands active; Beasts remain available through Branch &amp; Claw systems</li>
+            <li><b>Invader deck:</b> 1-1-1-3-2-2-2-2-3-3-3-3, so the first Stage III card appears on Turn 4</li>
+            <li><b>Gate:</b> 2 consecutive wins before changing spirit, difficulty, or hand count</li>
+          </ul>
+        </div>
 
-        <h4>Recommended progression</h4>
+        <h4>Historical lock-in</h4>
+        <div class="card info">
+          <span class="badge info">Completed</span>
+          Phase 2 established baseline archetypes at Brandenburg-Prussia L1 with Shadows, Lightning, and Thunderspeaker. Phase 3 then locked Thunderspeaker vertically through BP2 and BP3, proving that BP's accelerated timeline can be managed at Difficulty 6 when the spirit variable is stable.
+        </div>
+
+        <h4>Keeper tactical constraints</h4>
         <div class="phases">
           <div class="phase">
-            <div class="ph-name">Step 1 (3–4 games)</div>
-            <div class="ph-when">Bringer of Dreams and Nightmares</div>
+            <div class="ph-name">Growth</div>
+            <div class="ph-when">Double-presence pressure</div>
             <ul>
-              <li>The "easiest" High — but counterintuitive</li>
-              <li>Drill: Fear-only path, no damage focus</li>
-              <li>Adversary: Prussia L3 or Sweden L3</li>
+              <li>Prioritize early double-presence lines when energy can support them</li>
+              <li>Place toward sacred-site reach and inland Wilds targets, not just convenient lands</li>
+              <li>Reclaim only when the next hand cannot hit needed Sun/Fire/Plant thresholds</li>
             </ul>
           </div>
           <div class="phase">
-            <div class="ph-name">Step 2 (3–4 games)</div>
-            <div class="ph-when">Ocean's Hungry Grasp</div>
+            <div class="ph-name">Wilds</div>
+            <div class="ph-when">Explore interception</div>
             <ul>
-              <li>Coastal lockdown; the "easy hard" spirit</li>
-              <li>Drill: drown invaders, expand reach inland</li>
-              <li>Adversary: Sweden L3 (coastal pressure)</li>
+              <li>Use growth and powers to put Wilds inland before Explore cascades split the board</li>
+              <li>Count Wilds as tempo: one prevented Explore is often worth more than one late damage action</li>
+              <li>Do not spend all Wilds on already-contained lands unless it protects a future sacred site</li>
             </ul>
           </div>
           <div class="phase">
-            <div class="ph-name">Step 3 (3–4 games)</div>
-            <div class="ph-when">Heart of the Wildfire OR Shroud</div>
+            <div class="ph-name">Elements</div>
+            <div class="ph-when">Sun / Fire / Plant draft bias</div>
             <ul>
-              <li>Try the "risky High": Wildfire self-blights, Shroud is fragile</li>
-              <li>Adversary: France L2 or Habsburg L3</li>
+              <li>Draft to chain <b>Punish for Trespassing</b> and <b>Spreading Wilds</b></li>
+              <li>Prefer Minors that solve next turn's board while keeping innate thresholds alive</li>
+              <li>Take Majors only when the energy track and reclaim timing can actually support them</li>
             </ul>
           </div>
           <div class="phase">
-            <div class="ph-name">Step 4 (2–3 games)</div>
-            <div class="ph-when">England — the final boss</div>
+            <div class="ph-name">Pacing</div>
+            <div class="ph-when">Slow-phase clearance</div>
             <ul>
-              <li>England Base (Difficulty 3) is harder than most L1s</li>
-              <li>Try a familiar High spirit against England Base</li>
-              <li>Don't jump to England L4+ here — that's Phase 5</li>
+              <li>Plan mass-clear Slow powers one Invader card ahead</li>
+              <li>Accept small blight if it buys a decisive growth turn</li>
+              <li>Do not chase every Ravage; preserve the lands that anchor future reach</li>
             </ul>
           </div>
         </div>
 
-        <h4>Scenarios — when and which</h4>
+        <h4>After Keeper's gate</h4>
+        <div class="card cond">
+          <span class="badge cond">Next variable</span>
+          Move directly into Phase 5 two-handed solo. Drop the adversary back to no adversary or Brandenburg-Prussia L1 so the variable being trained is dual-hand management, "Another Spirit" targeting, and cross-board timing rather than raw difficulty.
+        </div>
+
+        <h4>Scenario breadth queue (later)</h4>
         <table class="reach-table">
           <thead>
             <tr><th>Scenario</th><th>Source</th><th>Effect</th><th>Difficulty mod</th></tr>
@@ -3554,50 +3699,54 @@
             <tr><td>The Great River</td><td>JE</td><td>River reshapes board</td><td class="lvl-col">+3</td></tr>
             <tr><td>A Diversity of Spirits</td><td>Feather</td><td>Element diversity bonus</td><td class="lvl-col">+0</td></tr>
             <tr><td>Varied Terrains</td><td>Feather</td><td>Modified board types</td><td class="lvl-col">+1</td></tr>
-            <tr><td>Destiny Unfolds</td><td>Nature Incarnate</td><td>Per-turn dynamic effects</td><td class="lvl-col">+2</td></tr>
-            <tr><td>Surges of Colonization</td><td>Nature Incarnate</td><td>Wave-based invader spikes</td><td class="lvl-col">+3</td></tr>
           </tbody>
         </table>
 
         <div class="diag">
-          <div class="lbl">Diagnostic Checkpoint 4</div>
+          <div class="lbl">Diagnostic Checkpoint 4 — Keeper / BP2</div>
           <ul>
-            <li>Win at Difficulty 5+ at least 3 times across different spirit/adversary combos</li>
-            <li>Win as Bringer with a Fear-only path</li>
-            <li>Win a Scenario at the spirit's typical solo level</li>
-            <li>Beat England Base</li>
+            <li>Win 2 consecutive games with Keeper at Brandenburg-Prussia L2</li>
+            <li>Log the winning growth line and the first turn where Wilds changed the Explore outcome</li>
+            <li>Identify the key element threshold turn in each win</li>
+            <li>Keep all current DLC systems enabled during both wins</li>
+            <li>After passing, proceed to Phase 5 two-handed solo at Difficulty 0–2</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="tile t3 span2" id="s18" data-keys="phase 5 nature incarnate incarna aspects empowered behemoth wandering voice towering roots habsburg mining">
+    <section class="tile t3 span2" id="s18" data-keys="future dlc watchlist nature incarnate incarna aspects behemoth wandering voice towering roots">
       <span class="tile-badge">ADVANCED</span>
-      <h3><span class="num">18</span>Phase 5 — Nature Incarnate &amp; Mastery</h3>
+      <h3><span class="num">18</span>Future DLC Watchlist</h3>
       <div class="body">
-        <p>The newest expansion (released Nov 6, 2025) adds the most novel mechanic in the franchise: <b>Incarna</b>. This is where you stop being "competent" and start being "fluent."</p>
+        <p>This section is deliberately outside the active project context. The current roadmap scope is Branch &amp; Claw, Jagged Earth, Feather &amp; Flame, Keeper at BP2, then 2-handed solo. Nature Incarnate can become a later content horizon after those foundations are stable.</p>
 
-        <h4>The Incarna mechanic — a new presence type</h4>
+        <h4>Current digital status</h4>
+        <div class="card info">
+          <span class="badge info">Watchlist</span>
+          Track Nature Incarnate separately from the active run. Add it only when you intentionally expand beyond the current DLC configuration rather than accidentally mixing a new expansion into the Keeper or first 2-handed learning gates.
+        </div>
+
+        <h4>The Incarna mechanic</h4>
         <div class="card elem">
           <div class="hdr"><span class="badge elem">New mechanic</span></div>
           <ul>
             <li><b>Incarna tokens</b> represent the physical manifestation of a Spirit on the board</li>
             <li>Acts like a "super presence" — provides ongoing effects in its land</li>
             <li>Can be <b>Empowered</b> for permanent power increase (a one-way upgrade)</li>
-            <li>Can be moved, destroyed, or take damage like a special unit</li>
-            <li>4 Nature Incarnate spirits use Incarna natively: <b>Behemoth, Towering Roots, Breath of Darkness, Wandering Voice</b></li>
-            <li>3 Aspects also use Incarna (for Thunderspeaker, Serpent, Lure)</li>
+            <li>Some spirits use Incarna natively; some aspects add Incarna to familiar spirits</li>
+            <li>Because Incarna adds a spirit-specific board object, defer it until core token timing feels automatic</li>
           </ul>
         </div>
 
-        <h4>What else NI adds</h4>
+        <h4>What it eventually adds to the experience map</h4>
         <div class="dlc-grid">
           <div class="dlc">
-            <div class="when">8 spirits (staggered release)</div>
-            <div class="name">Spirit phases</div>
+            <div class="when">Spirits</div>
+            <div class="name">8 additional spirits</div>
             <ul>
-              <li>Phase 1 (Nov 6 2025): Wandering Voice, Behemoth, Towering Roots</li>
-              <li>Phases 2–8: Hearth-Vigil, Breath of Darkness, Relentless Gaze, Wounded Waters, Dances Up Earthquakes</li>
+              <li>Start with Ember-Eyed Behemoth or Towering Roots when entering this content</li>
+              <li>Save Dances Up Earthquakes and other heavier loops until after several reps</li>
             </ul>
           </div>
           <div class="dlc">
@@ -3605,94 +3754,76 @@
             <div class="name">Habsburg Mining Expedition</div>
             <ul>
               <li>"Land Stripped Bare" loss condition — 8 invaders + blight in 1 land</li>
-              <li>Tunnels = extra Explores</li>
+              <li>Use only after Habsburg Livestock and Russia are understood</li>
             </ul>
           </div>
           <div class="dlc">
-            <div class="when">20 new Aspects</div>
-            <div class="name">Aspect explosion</div>
+            <div class="when">Aspects</div>
+            <div class="name">Familiar spirits, new roles</div>
             <ul>
-              <li>For Bringer, Keeper, River, Shadows, Sharp Fangs, Shifting Memory, Rampant Green, Thunderspeaker</li>
-              <li>Massive replay variety on familiar spirits</li>
+              <li>Use aspects to revisit mastered spirits without changing every variable</li>
+              <li>Keeper's Spreading Hostility aspect is a natural revisit after current Keeper baseline</li>
             </ul>
           </div>
           <div class="dlc">
             <div class="when">New tokens</div>
             <div class="name">Incarna, Deeps, Quake, Vitality</div>
             <ul>
-              <li>Deeps = ocean depth pressure (Wounded Waters)</li>
-              <li>Quake = volatile damage (Dances Up)</li>
-              <li>Vitality = healing/buffs (Hearth-Vigil, Wounded Waters)</li>
+              <li>Each adds a new timing rule; introduce one spirit/token pair at a time</li>
+              <li>Do not mix new DLC token learning with first-time two-handed solo</li>
             </ul>
           </div>
         </div>
 
-        <h4>Recommended NI sub-sequence</h4>
+        <h4>Recommended future entry sequence</h4>
         <div class="phases">
           <div class="phase">
             <div class="ph-name">NI Step 1</div>
-            <div class="ph-when">Ember-Eyed Behemoth (Moderate)</div>
+            <div class="ph-when">One Incarna spirit, no new adversary</div>
             <ul>
-              <li>The easiest Incarna spirit</li>
-              <li>Drill: Move the Incarna deliberately each turn</li>
-              <li>Drill: Empower the Incarna once, observe the buff</li>
-              <li>Adversary: known L2–L3</li>
+              <li>Use Ember-Eyed Behemoth or Towering Roots</li>
+              <li>Adversary: none or familiar BP1/BP2</li>
+              <li>Drill: move or use the Incarna deliberately every turn it matters</li>
             </ul>
           </div>
           <div class="phase">
             <div class="ph-name">NI Step 2</div>
-            <div class="ph-when">Towering Roots (Moderate)</div>
+            <div class="ph-when">Aspect revisit</div>
             <ul>
-              <li>Second Incarna spirit; jungle-themed control</li>
-              <li>Drill: hold a single Jungle land for 6 turns</li>
+              <li>Pick one aspect for a spirit already in your journal</li>
+              <li>Keep adversary/board familiar so the aspect change is isolated</li>
             </ul>
           </div>
           <div class="phase">
             <div class="ph-name">NI Step 3</div>
-            <div class="ph-when">Wandering Voice (High)</div>
+            <div class="ph-when">Token specialty spirit</div>
             <ul>
-              <li>Incarna + Strife — your first "Incarna + token" combo spirit</li>
-              <li>Drill: 4+ Strife tokens active by turn 5</li>
+              <li>Try Wandering Voice once Strife timing is comfortable</li>
+              <li>Keep the goal mechanical: token timing first, difficulty second</li>
             </ul>
           </div>
           <div class="phase">
             <div class="ph-name">NI Step 4</div>
-            <div class="ph-when">Habsburg Mining L2+</div>
+            <div class="ph-when">Habsburg Mining</div>
             <ul>
               <li>The newest adversary; pressure resembles Sweden but with deeper escalation</li>
-              <li>Drill: never let a single land hit 6+ invaders/blight combined</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <div class="ph-name">NI Step 5 (when released)</div>
-            <div class="ph-when">Remaining spirits</div>
-            <ul>
-              <li>Phases 2–8 release across months; pick up new spirits as they ship</li>
-              <li>Hearth-Vigil and Wounded Waters are forgiving (Moderate/High)</li>
-              <li>Dances Up Earthquakes is Very High — save for last</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <div class="ph-name">NI Step 6</div>
-            <div class="ph-when">NI Aspect variety</div>
-            <ul>
-              <li>Try at least 3 of the new Aspects</li>
-              <li>Aspect-Incarna versions of Thunderspeaker / Serpent / Lure</li>
-              <li>Drill: notice how Aspects change spirit role</li>
+              <li>Do not add this until at least one future-DLC spirit has a clean win</li>
+              <li>Drill: never let a single land approach the stripped-bare loss condition</li>
             </ul>
           </div>
         </div>
 
         <div class="diag">
-          <div class="lbl">Diagnostic Checkpoint 5 — Nature Incarnate</div>
+          <div class="lbl">Future DLC Entry Gate</div>
           <ul>
-            <li>Win with all 3 launch NI spirits (Behemoth, Towering Roots, Wandering Voice)</li>
+            <li>Complete Phase 4 Keeper / BP2 first</li>
+            <li>Complete Phase 5 two-handed basics first unless you specifically want a single-spirit preview</li>
+            <li>Win with at least one future-DLC spirit</li>
             <li>Empower an Incarna deliberately in a winning game</li>
-            <li>Beat Habsburg Mining L2+</li>
-            <li>Try ≥ 3 NI Aspects</li>
-            <li>Articulate when an Incarna is worth Empowering vs delaying</li>
+            <li>Try at least one future-DLC aspect on a familiar spirit</li>
+            <li>Log whether Incarna added satisfying depth or too much overhead for the current season</li>
           </ul>
-          <div class="pass-block"><b>Pass:</b> you're now operating at competent baseline across all current Spirit Island content. See §21 for the mastery roadmap beyond this.</div>
+          <div class="pass-block"><b>Pass:</b> the future DLC becomes part of the normal rotation, not a novelty mode.</div>
         </div>
       </div>
     </section>
@@ -3810,45 +3941,49 @@
       <span class="tile-badge">ADVANCED</span>
       <h3><span class="num">21</span>Mastery Definition (Honest)</h3>
       <div class="body">
-        <div class="fix"><b>Set expectations honestly.</b> Spirit Island has 30+ spirits, 8 adversaries, 11+ scenarios, and the Aspect/Incarna systems multiply combinations into the tens of thousands. "Mastery" is a long road. Define stages.</div>
+        <div class="fix"><b>Set expectations honestly.</b> Spirit Island has dozens of spirits, multiple adversaries, scenarios, aspects, and token systems. "Mastery" here means fully experiencing and understanding the digital content first. Difficulty chasing comes later, only when it adds fun or reveals new decisions.</div>
 
         <h4>Competent (after ~30 games / completing this plan to Phase 4)</h4>
         <p>You're competent when:</p>
         <ul>
-          <li>You win consistently at Difficulty 5 with familiar spirits</li>
+          <li>You win consistently at Difficulty 4–5 with familiar spirits</li>
           <li>You can articulate every spirit's win condition (even ones you haven't played)</li>
           <li>You always know what the Invader phase will do BEFORE the spirit phase</li>
           <li>You draft Minors with element-threshold reasoning, not raw effect size</li>
-          <li>You've won with at least one spirit from each complexity tier (Low/Moderate/High)</li>
+          <li>You've won with at least one spirit from each core complexity tier (Low/Moderate/High)</li>
         </ul>
 
         <h4>Strong (50–100 games)</h4>
         <ul>
-          <li>You can win Difficulty 7–8 with any spirit in your owned pool</li>
-          <li>You consistently 2-hand at Difficulty 6+ with planned spirit pairings</li>
+          <li>You have played most current spirits at least once and can explain which ones you want to revisit</li>
+          <li>You consistently 2-hand at comfortable difficulty with planned spirit pairings</li>
           <li>You can play any Very High spirit (Fractured Days, Starlight) at Difficulty 3+</li>
           <li>You can describe each adversary's "personality" without lookup</li>
-          <li>You've tried all Aspects and have opinions on each</li>
+          <li>You've tried representative Aspects and have opinions on which ones genuinely change the role</li>
         </ul>
 
         <h4>Mastery (~150+ games)</h4>
         <ul>
-          <li>You can beat Difficulty 9–10 (Russia L6, England L6) reliably</li>
-          <li>You can solo any spirit at Difficulty 7+</li>
+          <li>Every current spirit has a journal profile and at least one meaningful play experience</li>
+          <li>You know which spirits are poor true-solo fits and which ones blossom in 2-handed play</li>
+          <li>You have at least one comfortable 2-handed pair in each role family: damage/control, fear/defense, support/tempo</li>
+          <li>You have sampled every current adversary family and representative scenarios/aspects</li>
           <li>You read board state and predict 3 turns ahead</li>
           <li>You can teach others without confusing them</li>
           <li>You see the "shape" of the game — which spirits/adversaries are mismatched, when to leverage that</li>
         </ul>
 
-        <h4>True mastery (~300+ games)</h4>
+        <h4>Challenge mastery (~300+ games / optional)</h4>
         <ul>
+          <li>You can beat Difficulty 9–10 setups reliably when you choose to pursue them</li>
+          <li>You can push familiar 2-handed pairs into hostile adversary/scenario combinations</li>
           <li>You contribute to community strategy discussion (BGG, wiki, forums)</li>
-          <li>You've completed every Weekly Challenge variant</li>
+          <li>You've completed a meaningful spread of Daily/Weekly Challenge variants</li>
           <li>You can win with handicapped setups (e.g., bad spirit / bad board / max adversary)</li>
           <li>You see asymmetric matchups and adapt instantly</li>
         </ul>
 
-        <div class="why"><b>The honest read:</b> finishing this plan to Phase 5 makes you <b>competent across all current content</b>. Mastery is a separate, longer journey. Don't confuse "I beat Habsburg Mining L2" with "I'm good at Spirit Island" — but also, don't sell yourself short. Competent Spirit Island players are rare; reach that bar and you're better than 80% of casual players.</div>
+        <div class="why"><b>The honest read:</b> finishing the current Phase 4 plus Phase 5 two-handed integration makes you <b>ready for broad content fluency</b>. Full-content mastery means every spirit, every adversary family, scenario/aspect coverage, current DLC mechanics, and preferred 2-handed pairs. Very high difficulty is optional endgame spice, not the route itself.</div>
 
         <h4>Signals you've plateaued</h4>
         <ul>
@@ -3899,7 +4034,7 @@
           </div>
           <div class="term">
             <div class="word">Power Progression</div>
-            <div class="defn">Predetermined minor/major draws for each base Low spirit. Removes draft pressure for new players. Use in Phase 1 only.</div>
+            <div class="defn">Predetermined minor/major draws for each base Low spirit. Removes draft pressure for new players. Completed foundation tool; use only as a reset after a long break.</div>
           </div>
           <div class="term">
             <div class="word">Toolkit Spirit</div>
@@ -3987,7 +4122,7 @@
           </div>
           <div class="term">
             <div class="word">Custom Game</div>
-            <div class="defn">Pick all parameters yourself. Use after Phase 0 for the structured plan in this aid.</div>
+            <div class="defn">Pick all parameters yourself. Use for the active roadmap so spirit, adversary, board, scenario, and DLC variables stay intentional.</div>
           </div>
           <div class="term">
             <div class="word">Undo (Main / Spirit Phase)</div>
@@ -4053,7 +4188,7 @@
           <span class="kbd">Esc</span> clear search,
           <span class="kbd">D</span> dense layout,
           <span class="kbd">R</span> reset view,
-          <span class="kbd">B</span> beginner mode,
+          <span class="kbd">B</span> focus mode,
           <span class="kbd">A</span> all mode,
           <span class="kbd">V</span> advanced mode.
         </p>
@@ -4066,10 +4201,10 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <span class="footer-sigil"></span>
-        <span>Digital Spirit Island — Learning Plan</span>
+        <span>Digital Spirit Island — Mastery Roadmap</span>
       </div>
       <p class="footer-text">
-        Solo-friendly · base game → <a class="ext" href="https://store.steampowered.com/app/3973840/Spirit_Island__Nature_Incarnate/" target="_blank" rel="noopener">Nature Incarnate</a> ·
+        Solo-friendly · current scope: Branch &amp; Claw + Jagged Earth + Feather &amp; Flame ·
         sourced from the <a class="ext" href="https://spiritislandwiki.com/" target="_blank" rel="noopener">Spirit Island Wiki</a>,
         <a class="ext" href="https://boardgamegeek.com/boardgame/162886/spirit-island" target="_blank" rel="noopener">BGG</a> strategy threads, and community guides.
       </p>
